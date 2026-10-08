@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fc">
+  <title>모아 · AI 챗봇</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <a class="brand" href="/" aria-label="모아 홈"><span class="logo">✳</span><span>모아 <small>AI CHAT</small></span></a>
+      <button id="reset" class="reset" type="button">＋ 새 대화</button>
+    </header>
+    <main>
+      <div class="model"><span></span> GPT-4o mini</div>
+      <section id="welcome" class="welcome">
+        <div class="hero-icon">✳</div>
+        <p class="eyebrow">생각을 나누는 작은 공간</p>
+        <h1>무엇이든, 편하게 물어보세요.</h1>
+        <p class="intro">작은 궁금증부터 새로운 아이디어까지.<br>대화의 흐름을 기억하며 함께 생각할게요.</p>
+        <div class="suggestions">
+          <button type="button" data-prompt="JavaScript를 처음 배우는데, 어떤 순서로 공부하면 좋을까?"><span>⌘</span><strong>차근차근 배우기</strong><small>JavaScript 공부, 어디서 시작할까?</small></button>
+          <button type="button" data-prompt="주말에 집에서 할 수 있는 창의적인 취미를 추천해 줘."><span>✧</span><strong>새로운 영감 찾기</strong><small>이번 주말엔 색다른 취미 어때?</small></button>
+          <button type="button" data-prompt="할 일이 많을 때 하루 계획을 효율적으로 세우는 방법을 알려 줘."><span>☷</span><strong>생각 정리하기</strong><small>복잡한 하루를 가볍게 정리해 봐요.</small></button>
+        </div>
+      </section>
+      <section id="messages" class="messages" role="log" aria-label="대화 내용" aria-live="polite"></section>
+    </main>
+    <div class="composer-area">
+      <p id="status" role="status"></p>
+      <form id="chat-form">
+        <label class="sr-only" for="input">메시지</label>
+        <textarea id="input" rows="1" maxlength="6000" placeholder="모아에게 메시지를 보내세요" required></textarea>
+        <button id="send" type="submit" aria-label="메시지 보내기">↑</button>
+      </form>
+      <p class="footer-note">Enter로 전송 · Shift + Enter로 줄바꿈 <span>대화는 새로고침하면 사라집니다.</span></p>
+      <p class="disclaimer">AI의 답변은 정확하지 않을 수 있으니 중요한 정보는 확인해 주세요.</p>
+    </div>
+  </div>
+</body>
+</html>
