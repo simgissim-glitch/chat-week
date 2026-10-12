@@ -73,3 +73,12 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const port = Number(process.env.PORT) || 3000;
   createApp(client).listen(port, '127.0.0.1', () => console.log(`채팅 앱: http://localhost:${port}`));
 }
+const client = process.env.OPENAI_API_KEY
+  ? new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+      timeout: 45000,
+      maxRetries: 0
+    })
+  : null;
+
+export default createApp(client);
